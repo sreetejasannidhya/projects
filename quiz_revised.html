@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        body{
+            margin: 0;
+            padding : 0;
+        }
+
+        section{
+            display : flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(205, 217, 128);
+            height: 100vh;
+           
+        }
+
+        .div1{
+
+           margin: 10px;
+            border: 1px solid  rgb(160, 223, 115);
+            background-color: rgb(213, 237, 197) ;
+            width: 700px;
+            height: 300px;
+            padding: 5px;
+
+            display: none;
+
+           
+            
+           
+
+        }
+        input{
+            padding: 10px;
+            margin: 15px;
+        }
+
+        .div2{
+
+            margin: 10px;
+            border: 1px solid  rgb(160, 223, 115);
+            background-color: rgb(213, 237, 197) ;
+            width: 700px;
+            height: 300px;
+            padding: 5px;
+
+            
+
+            
+
+        }
+
+        .div3{
+
+            margin: 10px;
+            border: 1px solid  rgb(160, 223, 115);
+            background-color: rgb(213, 237, 197) ;
+            width: 700px;
+            height: 300px;
+            padding: 5px;
+
+            
+
+            
+
+
+        }
+
+        
+
+    </style>
+
+
+
+       
+
+</head>
+<body>
+
+    <section>
+
+        
+        <form  id = "quiz1" class = "quizForm"  action="">
+
+            <h1 style = "text-align: center;">QUIZ</h1>
+
+       
+        <div class = "div1">
+
+            <h3 style = "text-align: center;">1.What is HTML ?</h3>
+            <input type="radio" value = "A" name='radio'> <span> Hyper Text Markup Language</span> <br>
+            <input type="radio" value = "B" name='radio'> <span> Hyper Type markup Language</span> <br>
+            <input type="radio" value = "C" name='radio'> <span> Hyper Text Mark Language</span> <br>
+            <input type="radio" value = "D" name='radio'> <span>Hyper Typer Mell Language</span> <br>
+
+            <button  id =  "btn1" style = "margin-top: 150px; width:100px;height:30px;border:none;border-radius:5px;">Next</button>
+
+
+        </div> <br>
+
+    </form>
+
+
+
+    <form id = "quiz2" class = "quizForm" action="">
+        <div class = "div2">
+
+            <h3 style = "text-align: center;">2.What is CSS ?</h3>
+            <input type="radio" value="A" name = "radio"> <span>Cascading state sheet</span> <br>
+            <input type="radio" value = "B" name = "radio"> <span>Cascading Styke Sheet</span> <br>
+            <input type="radio" value = "C"name = "radio"> <span>Cellular Style Sheet</span> <br>
+            <input type="radio" value = "D" name = "radio"> <span>Cascading Style Sheet</span> <br>
+
+
+
+            <button id = "btn2" style = "margin-top: 150px; width:100px;height:30px;border:none;border-radius:5px;">Next</button>
+            
+            
+
+
+        </div> <br>
+
+        
+
+    </form>
+
+    <form    id = "quiz3" class = "quizForm" action="">
+        <div class = "div3">
+
+            <h3 style = "text-align: center;">3.Why is concate used in JS?</h3>
+            <input type="radio" value = "A" name="radio"> <span>To delete the Array</span> <br>
+            <input type="radio" value = "B" name="radio"> <span>To merge the Arrays</span> <br>
+            <input type="radio" value = "C" name="radio"> <span>To cut the Array</span> <br>
+            <input type="radio" value = "D" name="radio"> <span>TO find the index of Array</span> <br>
+
+
+            <button  id ="btn3" style = "margin-top: 150px; width:100px;height:30px;border:none;border-radius:5px;">  Submit</button>
+
+ 
+        </div> <br>
+
+    </form>
+
+    
+
+
+
+    </section>
+
+    <script>
+
+        var btn1 = document.getElementById('btn1');
+        var btn2 = document.getElementById('btn2');
+        var btn3 = document.getElementById('btn3');
+
+        // Event listeners for buttons triggering display functions
+        btn1.addEventListener('click', display1);
+        btn2.addEventListener('click', display2);
+        btn3.addEventListener('click', display3);
+
+        function display1() {
+            var div2 = document.querySelector('.div2');
+            var div3 = document.querySelector('.div3');
+
+            div2.style.display = "none";
+            div3.style.display = "none";
+        }
+
+        function display2() {
+            var div1 = document.querySelector('.div1');
+            var div2 = document.querySelector('.div2');
+            var div3 = document.querySelector('.div3');
+
+            div1.style.display = "none";
+            div2.style.display = "flex";
+            div3.style.display = "none";
+        }
+
+        function display3() {
+            var div1 = document.querySelector('.div1');
+            var div2 = document.querySelector('.div2');
+            var div3 = document.querySelector('.div3');
+
+            div1.style.display = "none";
+            div2.style.display = "none";
+            div3.style.display = "flex";
+        }
+
+        var userInput = [];
+
+        function retrieve() {
+            var selectedAns = document.querySelector('input[name="radio"]:checked');
+
+            if (selectedAns) {
+                userInput.push(selectedAns.value);
+                localStorage.setItem('userResponses', JSON.stringify(userInput));
+            }
+        }
+
+        // Trigger the retrieve function
+        retrieve();
+
+        // Calculate and display the score
+        var userResponses = localStorage.getItem('userResponses');
+        var userInput = userResponses ? JSON.parse(userResponses) : [];
+        var answers = ["A", "D", "B"];
+
+        function getScore() {
+            var count = 0;
+
+            if (userInput.length === answers.length) {
+                for (var i = 0; i < userInput.length; i++) {
+                    if (userInput[i] === answers[i]) {
+                        count++;
+                    }
+                }
+            }
+            return count;
+        }
+
+        btn3.addEventListener('click', viewScore);
+
+        function viewScore() {
+            alert("Your score: " + getScore() + "/3");
+        }
+
+
+        
+
+            
+
+            
+
+            
+        
+
+            
+
+            
+        
+        
+
+       
+                
+        
+           
+
+        
+       
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+    
+</body>
+</html>

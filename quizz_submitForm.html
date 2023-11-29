@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        body{
+            margin:0;
+            padding: 0;
+        }
+
+       
+
+        section{
+            height: 100vh;
+            background-color:rgb(203, 225, 161);
+        }
+
+        
+
+
+    </style>
+</head>
+<body>
+
+     <section>
+       <div id = "scoreDisplay">
+             <h1 >Score Card</h1>
+       </div>
+        
+    </section> 
+
+    <script>
+
+
+           
+                var userResponses = localStorage.getItem('userResponses');
+                var userInput = userResponses ? JSON.parse(userResponses) : [];
+                var answers = ["A", "D", "B"]; 
+        
+               
+                function getScore() {
+                    var count = 0;
+                    
+                    if (userInput.length === answers.length) {
+                        
+                        for (var i = 0; i < userInput.length; i++) {
+                            if (userInput[i] === answers[i]) {
+                                count++;
+                            }
+                        }
+                    }
+                    return count;
+                }
+        
+                
+                function viewScore() {
+                    var scoreDisplay = document.getElementById('scoreDisplay');
+                    scoreDisplay.innerText = "Your score: " + getScore() + "/3";
+                }
+        
+                
+                window.onload = function() {
+                    viewScore();
+                };
+            
+
+
+
+        
+
+
+
+        /*
+
+        var userInput = new Array();
+        var answers = new Array(3);
+
+        answers[0] = "A"
+        answers[1] = "D"
+        answers[2] = "B"
+
+        function getScore (){
+
+            var count = 0;
+            //var numQuestion = 3;
+
+            for(i=0;i<3;i++)
+            if(userInput[i] == answers [i]){
+
+                count+=1;
+
+            }
+
+            else{
+
+                count += 0;
+            }
+                
+
+
+
+              return count;
+        }
+
+  
+    function  viewScore(){
+          alert("Your score"+   getScore()+ "/3")
+          
+    }
+
+    */
+
+
+
+
+
+
+
+    </script>
+
+    
+</body>
+</html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button id = "inp">click</button>
+
+    <!-- <input type="text" id="inp1" placeholder="meters" value=""> -->
+    <!-- <input type="text" id='inp2' placeholder="centimeters"> -->
+
+    <script>
+
+    var btn = document.getElementById('inp')
+
+    btn.addEventListener('click' , data);
+
+  function data(){
+    var inputElement1 = document.createElement("input");
+
+
+
+    
+    inputElement1.type = "text";
+    inputElement1.id = "dynamicInput1";
+    inputElement1.placeholder = "meters";
+
+    document.body.appendChild(inputElement1);
+
+
+   
+
+    var inputElement2 = document.createElement("input");
+
+
+
+   
+    inputElement2.type = "text";
+    inputElement2.id = "dynamicInput2";
+    inputElement2.placeholder = "centimeters";
+
+    
+    document.body.appendChild(inputElement2);
+
+
+  }
+  
+
+  var input1 = document.getElementById('dynamicInput1')
+  var input2 = document.getElementById('dynamicInput2')
+
+   input1.addEventListener('keydown', display)
+
+
+
+  function display (){
+
+    
+    var meters = parseFloat(input1.value)
+    if(meters){
+        var cm = meters*100
+        input2.value = cm
+
+       
+    }
+
+  }
+
+
+
+
+  
+
+
+   
+/*
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+      section{
+         display: flex;
+         flex-direction: row;
+
+         padding: 20px;
+
+      }
+
+      div{
+         padding: 8px;
+
+
+      }
+
+      input, select{
+         padding: 4px;
+         margin: 5px;
+      }
+
+      input , label , select , h1{
+         visibility:hidden ;
+      }
+
+
+    </style>
+</head>
+<body>
+
+   <button>click me</button>
+
+   <h1 > Unit Conversions</h1>
+
+   
+
+   <section>
+
+   <div>
+      <input type="text" placeholder = " input value"  id = "int"> <br>
+          <label for="inp1">input_values</label>
+      <select name="name" id="inp1" >
+         <option value="m">m</option>
+         <option value="cm">cm</option>
+         <option value="inch">inch</option>
+         
+         <option value="km">km</option>
+      </select>
+
+
+   </div>
+
+   <div>
+
+      <input type="text" placeholder = " output value" id = "inter"> <br>
+      <label for="inp2">output_values</label>
+      <select name="name1" id="inp2" >
+         <option value="m">m</option>
+         <option value="cm">cm</option>
+         <option value="inch">inch</option>
+        
+         <option value="km">km</option>
+      </select>
+
+
+   </div>
+
+</section>
+
+<script>
+
+   var btn = document.getElementsByTagName('button')
+
+   btn.addEventListener('click' , data)
+
+   function data(){
+
+       visibility:collapse
+   }
+
+   var input1 = document.getElementById('int')
+   var select1 = document.getElementById('inp1')
+   var input2 = document.getElementById('inter')
+   var select2 = document.getElementById('inp2')
+
+   input1.addEventListener('input' , display1)
+   
+
+
+
+   function display1() {
+      var value = parseFloat(input1.value);
+      
+      
+
+         if(select1.value === "m" && select2.value === "cm"){
+            input2.value = value*100 ;
+            }
+
+            else if(select1.value === "m" && select2.value === "km"){
+               input2.value = value/1000;
+            }
+
+            else if(select1.value === "m" && select2.value === "inch"){
+               input2.value = value*39.3700787
+            }
+
+
+         if(select1.value === "cm" && select2.value === "m"){
+            input2.value = value/100 ;
+            }
+
+            else if(select1.value === "cm" && select2.value === "km"){
+               input2.value = value*0.00001;
+            }
+
+            else if(select1.value === "cm" && select2.value === "inch"){
+               input2.value = value*0.39370079
+            }
+
+
+            if(select1.value === "km" && select2.value === "m"){
+               input2.value = value*1000 ;
+               }
+   
+               else if(select1.value === "km" && select2.value === "cm"){
+                  input2.value = value*100000;
+               }
+   
+               else if(select1.value === "km" && select2.value === "inch"){
+                  input2.value = value*39370.0787
+               }
+
+
+
+               if(select1.value === "inch" && select2.value === "m"){
+                  input2.value = value*0.0254;
+                  }
+      
+                  else if(select1.value === "inch" && select2.value === "cm"){
+                     input2.value = value*2.54;
+                  }
+      
+                  else if(select1.value === "inch" && select2.value === "km"){
+                     input2.value = value*0.0000254
+                  }
+
+            
+            
+
+           console.log(input1.value+ "  to  "+input2.value) 
+
+
+    
+   }
+
+
+   
+   
+   
+      
+   
+   
+   
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
+
+
+
+  </script>
+    
+</body>
+</html>
+
+  
+
+    */
+
+    
+
+    
+
+   
+
+
+
+
+
+   
+
+    </script>
+    
+</body>
+</html>

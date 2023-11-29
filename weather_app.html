@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+     crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+     <!-- const  apikey -   b6b7b09c3f12ccf30c2e39c2f21361c2 -->
+
+     
+
+     <!-- var url = https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key} -->
+
+    <style>
+
+        body{
+            margin: 0;
+        
+        }
+
+        section{
+            background: linear-gradient(rgb(238, 238, 197) , white , rgb(205, 228, 237));
+            height: 100vh;
+
+            display :flex;
+            flex-direction: row;
+            justify-content: center;
+            align-content: center;
+            
+        }
+
+        .div1{
+
+            width : 500px;
+            height: 500px;
+            background-color: rgb(149, 215, 239);
+            margin-top: 100px;
+            border-radius: 10px;
+           padding: 20px;
+
+        }
+
+        #bttn{
+
+            width:70px; 
+            height: 47px; 
+            border:none;
+            border-radius :5px; 
+            background-color:rgb(66, 171, 212);
+
+
+        }
+    </style>
+</head>
+<body>
+
+    <section>
+ 
+
+        <div class = "div1">
+
+            <form  style = "margin:50px;"action="">
+
+            <h1 style = "text-align :center; color:aliceblue;font-size: 40px;font-family :cursive;">WEATHER</h1>
+
+            <input id = "location" style = " width:220px; height: 40px; border:none;border-radius :5px; padding:4px;" type="text" placeholder = "Enter the location">
+
+           
+            <button id = "bttn"  >Get</button> <br> <br>
+              
+            <i   class="fa-solid fa-cloud-sun-rain fa-2xl" style="color: rgb(245, 247, 241); margin-left:100px; margin-top:60px; font-size: 80px; text-align:center; "></i> <br> <br> <br>
+
+            <h3 id = "temp" style = "text-align :center; color:rgb(115, 131, 144);font-size: 20px;">23  <span>&deg</span>C</h3> 
+
+            <h4 id = "describe" style = "text-align :center; color:rgb(122, 135, 146);font-size: 20px;">Cloudy</h4>
+             <h5 id = "loc" style = "text-align :center; color:rgb(122, 137, 151);font-size: 20px;"> Location</h5>
+
+            
+
+            
+
+
+
+
+        </div>
+
+
+    </section>
+
+    <script>
+
+        var apikey = 'b6b7b09c3f12ccf30c2e39c2f21361c2';
+
+        var input = document.getElementById('location')
+        var btn = document.getElementById('bttn')
+        var temps = document.getElementById('temp')
+        var des = document.getElementById('describe')
+        var locas = document.getElementById('loc')
+
+        
+
+        
+       btn.onclick = function(e) {
+        e.preventDefault()
+
+        console.log('hiii')
+
+        if (input.value.length == 0){
+
+                
+                alert('enter the location')
+            }
+            else{
+               
+               
+               var loc = input.value
+        
+               var url = `https://api.openweathermap.org/data/2.5/weather?q=${loc}&appid=${apikey}`
+
+
+
+
+                fetch(url).then(res => res.json()).then(data =>{
+
+                    console.log(data)
+
+                    let {temp} = data.main
+                    let{name} = data
+                    let {description} = data.weather[0]
+
+                    temps.textContent = Math.floor(temp-272)
+
+
+                    des.innerHTML = description
+
+                    locas.innerText = name
+
+
+                } )
+
+                .catch(e =>{
+
+                    console.log(e.message)
+                })
+
+
+
+            }
+            input.value = ""
+
+            
+
+        }
+
+    
+
+
+
+    </script>
+
+    
+    
+</body>
+</html>

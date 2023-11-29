@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sudoku Solver</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        td {
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sudoku Solver</h1>
+    <button id="getPuzzle">Get Sudoku Puzzle</button>
+    <button id="solvePuzzle">Solve Sudoku</button>
+    <button id="clearPuzzle">Clear Puzzle</button>
+    <table id="sudokuBoard"></table>
+
+    <script>
+        const N = 9; // Size of the Sudoku grid (9x9)
+        let grid = new Array(N).fill(0).map(() => new Array(N).fill(0));
+
+                // Function to generate a random Sudoku puzzle
+                function generateRandomSudoku() {
+                    // You can implement your code to generate a random Sudoku puzzle here.
+                    // For simplicity, we'll use a predefined puzzle.
+                    return [
+                        [5, 3, 0, 0, 7, 0, 0, 0, 0],
+                        [6, 0, 0, 1, 9, 5, 0, 0, 0],
+                        [0, 9, 8, 0, 0, 0, 0, 6, 0],
+                        [8, 0, 0, 0, 6, 0, 0, 0, 3],
+                        [4, 0, 0, 8, 0, 3, 0, 0, 1],
+                        [7, 0, 0, 0, 2, 0, 0, 0, 6],
+                        [0, 6, 0, 0, 0, 0, 2, 8, 0],
+                        [0, 0, 0, 4, 1, 9, 0, 0, 5],
+                        [0, 0, 0, 0, 8, 0, 0, 7, 9]
+                    ];
+                }
+        
+                // Function to print the Sudoku grid
+                function printSudoku() {
+                    const table = document.getElementById('sudokuBoard');
+                    table.innerHTML = '';
+        
+                    for (let i = 0; i < N; i++) {
+                        const row = document.createElement('tr');
+                        for (let j = 0; j < N; j++) {
+                            const cell = document.createElement('td');
+                            cell.innerText = grid[i][j] === 0 ? '' : grid[i][j];
+                            row.appendChild(cell);
+                        }
+                        table.appendChild(row);
+                    }
+                }
+ // Function to check if it's safe to place a number in a cell
+ function isSafe(row, col, num) {
+    // Check the row and column
+    for (let i = 0; i < N; i++) {
+        if (grid[row][i] === num || grid[i][col] === num) {
+            return false;
+        }
+    }
+
+    // Check the 3x3 subgrid
+    const startRow = row - (row % 3);
+    const startCol = col - (col % 3);
+    for (let i = 0; i < 3; i++) {
+        for (let j = 0; j < 3; j++) {
+            if (grid[i + startRow][j + startCol] === num) {
+                return false;
+            }
+        }
+    }
+
+    return true;
+}
+
+  // Function to solve the Sudoku puzzle using backtracking
+  function solveSudoku() {
+    for (let row = 0; row < N; row++) {
+        for (let col = 0; col < N; col++) {
+            if (grid[row][col] === 0) {
+                for (let num = 1; num <= N; num++) {
+                    if (isSafe(row, col, num)) {
+                        grid[row][col] = num;
+                        printSudoku();
+                        if (solveSudoku()) {
+                            return true; // Solved successfully
+                        }
+                        grid[row][col] = 0; // Backtrack
+                    }
+                }
+                return false; // No solution found
+            }
+        }
+    }
+    return true; // Solved the entire puzzle
+}
+
+
+        document.getElementById('getPuzzle').addEventListener('click', () => {
+            grid = generateRandomSudoku();
+            printSudoku();
+        });
+
+        document.getElementById('solvePuzzle').addEventListener('click', () => {
+            solveSudoku();
+        });
+        document.getElementById('clearPuzzle').addEventListener('click', () => {
+            grid = new Array(N).fill(0).map(() => new Array(N).fill(0));
+            printSudoku();
+        });
+    </script>
+</body>
+</html>
+

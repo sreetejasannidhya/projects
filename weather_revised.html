@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- <meta charset="UTF-8" /> -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>weather</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+     crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        
+        }
+        
+        body{
+            background: linear-gradient(to right ,rgb(31, 70, 121),rgb(10, 169, 232));  
+        
+        }
+        
+        .container{
+            background-color: white;
+            width: 400px;
+            margin: auto;
+            margin-top: 150px;
+            padding: 25px 20px;
+        }
+        .title{
+            text-align: center;
+            font-size: 28px;
+        
+        }
+        
+        .container .input{
+            text-align: center;
+            margin-top: 25px;
+        }
+        
+        .input #location{
+            padding: 10px 10px;
+            font-size: 20px;
+            outline: none;
+            border-radius: 7px 0 0 7px;
+        }
+        
+        #location:focus{
+            box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.4);
+        }
+        
+        .input #btn{
+            font-size: 20px;
+            padding: 10px 10px;
+            border-radius: 0 7px 7px 0;
+            margin-left: -40px;
+            background-color: rgba(14, 61, 58,1);
+            color: white;
+            cursor: pointer;
+        }
+        
+        #btn:hover{
+            box-shadow: 0px 0px 10px rgba(7, 122, 114, 0.6);
+        
+        }
+        
+        
+        
+        .info .temperature{
+            font-size: 55px;
+            text-align: center;
+            font-weight: 600;
+        }
+        #c{
+            font-size: 35px;
+        }
+        
+        .info .description{
+            font-size: 30px;
+            font-weight: 600;
+            text-align: center;
+        }
+        .location{
+            text-align: center;
+            font-size: 25px;
+            padding: 10px;
+            font-weight: 500;
+        
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">
+        
+        <h1>Weather App</h1>
+      </div>
+      <div class="input">
+        <input type="text" id="location" placeholder="Location" />
+        <input type="button" value="Get" id="btn"/>
+      </div>
+  
+      <div class="info">
+        <i   class="fa-solid fa-cloud-sun-rain fa-2xl" style="color: rgb(62, 62, 60); margin-left:100px; margin-top:60px; font-size: 80px; text-align:center; "></i> <br> <br> <br>
+
+        <div class="temperature"  ><span class="temp" id="temp">25</span><span class="degree">&#176</span><span id="c">C</span></div>
+        <div class="description" id="description">Cloudy</div>
+        <div class="location" id="location-description">Hyderabad</div>
+    </div>
+    </div>
+
+    <script>
+
+        let input = document.getElementById('location')
+let btn = document.getElementById('btn')
+let temps = document.getElementById('temp')
+let desc = document.getElementById('description')
+let locationVal = document.getElementById('location-description')
+
+const apikey = 'e11f4384118a43be349a4584f3fe6bdf'
+
+btn.onclick = function(){
+    if(input.value.length === 0){
+        alert('enter something')
+    }else{
+
+        loc = input.value
+        var url = `https://api.openweathermap.org/data/2.5/weather?q=${loc}&appid=${apikey}`
+
+        fetch(url).then(res => res.json()).then(data =>{
+
+            console.log(data)
+
+            let {temp}  = data.main 
+            let {name} = data
+            let {description} = data.weather[0]
+
+            temps.textContent = Math.floor(temp - 272)
+
+       locationVal.innerText = name
+
+       desc.innerHTML = description
+
+        } )
+
+        .catch(e => {
+            console.log(e.message)
+        })
+
+    }
+
+input.value = ''
+
+
+
+}
+    </script>
+  </body>
+  
+</html>
+

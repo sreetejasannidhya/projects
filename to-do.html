@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            background: linear-gradient(pink,rgb(207, 90, 110),rgb(193, 13, 43));
+            height: 100vh;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-content: center;
+        }
+
+        section{
+            
+            width:700px;
+            
+            
+            display:grid;
+
+            grid-template-columns: auto;
+            
+            justify-content: center;
+            align-content: center;
+            
+        }
+
+        .div1{
+            margin-top: 50px;
+            background-color: white;
+            padding: 20px;
+            width:500px;
+        }
+
+        input{
+            width:300px;
+            height: 30px;
+            padding: 8px;
+            margin: 10px;
+
+        }
+
+        button{
+            width:100px;
+            height:40px;
+            padding:3px;
+            margin:8px;
+            background-color: rgb(195, 102, 102);
+            border: none;
+            border-radius: 10px;
+            color:aliceblue;
+        }
+
+        .values{
+           background-color: rgb(202, 199, 199);
+           width:300px;
+            height: 30px;
+            padding: 8px;
+            margin: 10px;
+            display: flex;
+           flex-direction: row;
+            justify-content: space-between;
+        
+        }
+
+        
+
+
+
+
+
+    </style>
+
+    
+</head>
+<body>
+
+    <section>
+        <div class = "div1">
+
+            <h1>TO-DO LIST</h1>
+            <input type="text" placeholder="What should I do">
+            <button>
+                Add more
+            </button>
+
+
+
+        </div>
+
+        <div class = "div2">
+
+        </div>
+    </section>
+
+    <script>
+        var input = document.querySelector('input')
+        var btn = document.querySelector('button')
+        var task = document.getElementsByClassName('div2')[0]
+
+        btn.addEventListener('click' , display)
+
+        function display() {
+            if(input.value.length === 0){
+                alert("enetr the string")
+            }
+
+            else{
+
+                task.innerHTML += `<div class = "values"> ${input.value} <i class="fa-solid fa-trash"></i></div>`
+
+                var del = document.getElementsByClassName('fa-trash')
+                for(i=0;i<del.length;i++){
+                    del[i].onclick = function (){
+                        this.parentNode.remove()
+                    }
+                }
+                input.value = " "
+
+            }
+        }
+        
+
+        
+
+    </script>
+    
+</body>
+</html>

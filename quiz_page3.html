@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        body{
+            margin: 0;
+            padding : 0;
+        }
+
+        section{
+            display : flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(205, 217, 128);
+            height: 100vh;
+           
+        }
+
+        .div1{
+
+           margin: 10px;
+            border: 1px solid  rgb(160, 223, 115);
+            background-color: rgb(213, 237, 197) ;
+            width: 700px;
+            height: 300px;
+            padding: 5px;
+           
+
+        }
+        input{
+            padding: 10px;
+            margin: 15px;
+        }
+
+        #Response{
+            display:none;
+        }
+
+       
+
+       
+        
+    </style>
+</head>
+<body>
+
+    <section>
+
+        
+
+       <form id = "quizForm" action="">
+        <div class = "div1">
+
+            <h3 style = "text-align: center;">3.Why is concate used in JS?</h3>
+            <input type="radio" value = "A" name="radio"> <span>To delete the Array</span> <br>
+            <input type="radio" value = "B" name="radio"> <span>To merge the Arrays</span> <br>
+            <input type="radio" value = "C" name="radio"> <span>To cut the Array</span> <br>
+            <input type="radio" value = "D" name="radio"> <span>TO find the index of Array</span> <br>
+
+
+
+
+
+
+
+
+            
+
+
+ 
+
+
+            <button  id ="btn" style = "margin-top: 150px; width:100px;height:30px;border:none;border-radius:5px;">Submit</button>
+
+
+        </div> <br>
+
+    </form>
+
+
+        <!-- <div id = "Response">
+            <p >Response Submited</p>
+        </div> -->
+
+        
+        
+
+        
+
+
+
+
+
+    </section>
+
+    <script>
+
+        var btn = document.getElementById('btn');
+
+        var quizForm = document.getElementById('quizForm');
+
+        btn.addEventListener('click' , display1)
+
+      
+        var userInput = []
+
+
+        function display1(){
+
+            
+
+       
+            var selectedAns = document.querySelector('input[type="radio"]:checked');
+
+
+            //for(var i in selectedAns){
+                if(selectedAns){
+                    userInput.push(selectedAns.value)
+
+
+
+                    console.log('hiii')
+                    localStorage.setItem('userResponses', JSON.stringify(userInput));
+    
+                //}
+            }
+            
+
+
+        }
+
+
+        
+
+
+       
+        
+
+        function display3(){
+            history.forward()
+           }
+
+       
+       
+
+        
+
+       
+
+
+
+
+
+        
+    </script>
+    
+</body>
+</html>

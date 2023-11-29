@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        button{
+            width:100px;
+            height:40px;
+            padding:3px;
+            margin:8px;
+            background-color: rgb(195, 102, 102);
+            border: none;
+            border-radius: 10px;
+            color:aliceblue;
+        }
+    </style>
+</head>
+<body>
+
+    <button id = "but">Increment COunter</button>
+    <p id = "take">0</p>
+    <button id = "on" >Decrement COunter</button>
+    <p id = "took">0</p>
+    <script>
+
+        var btn1 = document.getElementById('but')
+        var text1 = document.getElementById('take')
+
+        
+        var btn2 = document.getElementById('on')
+        var text2 = document.getElementById('took')
+
+        btn1.addEventListener('click' , display1)
+
+        value = prompt("enter  a value")
+
+        text1.innerText = value
+
+       
+
+
+        function display1 (){
+
+ 
+            value++
+
+            text1.innerText = value
+   
+        }
+       
+
+        btn2.addEventListener('click' , display2)
+
+        value1 = prompt("enter  a value2")
+
+        text2.innerText = value1
+
+        function display2() {
+
+            
+
+            value1--
+
+            text2.innerText = value1
+
+            
+
+           
+            
+            
+        }
+
+
+
+
+    </script>
+    
+</body>
+</html> 
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1 id = "take">0</h1>
+    <button id= "took">+</button>
+    <button id = "taken">-</button>
+
+    <script>
+
+        var text1 = document.getElementById('take')
+        var btn2 = document.getElementById('took')
+        var btn3 = document.getElementById('taken')
+
+
+        btn2.addEventListener('mouse' , display1)
+
+        btn3.addEventListener('mouse' , display2)
+
+        value = prompt("enter value")
+
+        text1.innerText = value
+
+        function display1 () {
+
+            value++
+
+            text1.innerText = value
+
+        }
+
+        function display2 () {
+
+            value--
+
+            text1.innerText = value
+
+        }
+
+
+
+
+    </script>
+    
+</body>
+</html> -->

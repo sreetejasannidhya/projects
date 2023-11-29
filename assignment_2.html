@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+       
+
+        //1. addition
+        var a = 10;
+        var b = 20;
+        document.write( 'addition - ' + a+b);
+        document.write('<br>')
+
+        //2. division 
+        var c = 10;
+        var d = 5;
+        document.write('division - '+ c/d);
+        document.write('<br>')
+
+        //3. avg of numbers
+        var e = 1;
+        var f = 2;
+        var g = 3;
+        var h = 4;
+        var i = 5;
+        document.write('avg of numbers - '+ (e+f+g+h+i)/5);
+        document.write('<br>');
+
+
+        //4. area of triangle
+
+        var j = 4;
+        var k = 3;
+        document.write ( 'area of traingle - '+   1/2*(j*k));
+        document.write('<br>');
+
+        //5. area of circle
+
+        var r = 2;
+        document.write( 'area of circle - '+ 3.14*r*2);
+        document.write('<br>');
+
+        //6.seconds to hrs
+        var z = 4000;
+        document.write( 'seconds to hour -' + z/3600);
+        document.write('<br>');
+
+        //7.meters  to milli meters
+
+        var y = 3;
+        document.write( 'm to mm -' + 3*1000);
+        document.write('<br>')
+
+        //8.rupees to dollors
+        var rupee = 80;
+        document.write( 'rps to $ -' + rupee/61.06);
+        document.write('<br>');
+
+        //9.simple interest
+
+        var p = 10000;
+        var t = 1;
+        var r = 10;
+        document.write( 'simple interest-' + (p*t*r)/100);
+        document.write('<br>');
+
+        //10.even or odd
+
+        var w = parseInt(prompt('Enter a value'));
+    
+        if(w%2==0)
+        {
+            document.write('even');
+        }else 
+        {
+            document.write ('odd');
+
+        }
+        document.write('<br>');
+
+        //11.positive or negative
+
+        var p = parseInt(prompt('enter the number'));
+        if(p>0)
+        {
+            document.write('positive');
+        }else 
+        {
+            document.write ('negative');
+
+        }
+        document.write('<br>');
+
+        //12.divisible bt 5 or not
+
+        var num = parseInt(prompt('enter the num'));
+        if (num%5==0){
+            document.write('divisible by 5');
+        }
+        else {
+            document.write('not divisible by 5');
+
+        }
+        document.write('<br>');
+
+        //13. divisible by 2,3,4
+
+        var num = parseInt(prompt('enter the num'));
+        if (num%2==0 && num%3==0 && num%4 == 0){
+            document.write('divisible by 2 ,3 ,4');
+        }
+        else {
+            document.write('not divisible by 2 , 3, 4');
+
+        }
+
+        document.write('<br>'); 
+
+        //14.leap year
+        
+        var leap = parseInt(prompt('enter the year'));
+        if(leap%4 == 0 &&  leap%100 != 0){
+            document.write('leap year');
+        }
+        else if (leap%400 == 0 && leap%100 == 0){
+            document.write(' leap year');
+        }
+        else{
+            document.write('not a leap year')
+        }
+        document.write('<br>');  
+
+
+         //15. date is valid or not
+         var date = parseInt(prompt('enter the date'));
+        
+            if(date<=31){
+                document.write('valid');
+                
+            }
+            else{
+                document.write('not valid');
+            }
+            document.write('<br>');
+         
+        
+
+
+
+        
+
+        //16. vowel or not
+        
+
+        var l = prompt('enter the character');
+        if((l == 'a' || l == 'e' || l == 'i' || l == 'o' || l == 'u') || (l == 'A' || l == 'I' || l == 'E' || l == 'O' || l == 'U' )){
+            document.write('vowels')
+        }
+        else{
+            document.write('constants');
+        }
+        document.write('<br>'); 
+        
+
+
+        //17. space or not
+        
+
+         var k = prompt('enter the char');
+        for(i=0;i<= k.length; i++)
+        {
+            if(k[i] == ' ')
+            {
+                document.write('space');
+                break;
+                document.write('<br>'); 
+            }
+            else{
+                document.write('no space');
+                break;
+            }
+        }
+        document.write('<br>'); 
+
+        //18. 1 to 100
+        for(i=1;i<=100 ; i++)
+        {
+            document.write('<br>');
+            document.write(i);
+            
+        } 
+        
+
+
+        // 19.even numbers from 10 to 100
+
+        for(i=10;i<=100 ; i++){
+            if(i%2== 0)
+            {   
+                document.write('<br>'); 
+                document.write(i)
+            }
+
+        }
+
+        // 20 . odd numbers from 1 to 100
+
+        for(i=1;i<=100 ; i++){
+            if(i%2!= 0)
+            {   
+                document.write('<br>'); 
+                document.write(i)
+            }
+
+        } 
+
+        // 21. remainder of two numbers
+        
+        var a = parseInt(prompt('Enter the number'));
+        var b =  parseInt(prompt('enter the number'));
+        if(a%b==0){
+            document.write('remainder is 0');
+            
+
+        }
+        else{
+            document.write('not remainder');
+        }
+        document.write('<br>'); 
+
+        //22. insurance
+
+        var sum = parseInt(prompt('enter the amount'));
+       var  premium = 0.2;
+         var insurance_amount = sum* premium;
+         document.write(insurance_amount);
+          document.write('<br');
+         
+
+         //23. current bill
+         var units = parseInt(prompt('enter the units'));
+         cost_perunit = 10;
+         var bill = units*cost_perunit;
+         document.write(bill);
+         document.write('<br');
+
+         //23.b
+         var units = parseInt(prompt('enter the units'));
+         cost_perunit = 15;
+         var bill = units*cost_perunit;
+         document.write(bill);
+          document.write('<br>')
+
+         
+
+         //24. net salary
+         var gross_sal = parseInt(prompt('salary'));
+         //var deductions = parseInt(prompt('deductions'));
+         var tax = parseInt(prompt('tax'));
+         var pf = parseInt(prompt('pf'));
+         var gratuity = parseInt(prompt('gratuity'));
+
+         var net_sal = gross_sal - (tax+pf+gratuity);
+         document.write(net_sal);
+          document.write('<br>')
+
+         
+
+         //25.EMI
+         var p = parseInt(prompt('enter the amount'));
+         r= 0.4;
+         emi = (p*r*(1+r)**12 ) / (((1+r)**12)-1) ;
+         document.write(emi);
+          document.write('<br>')
+
+
+          //26. no:of days for given number of months
+
+        var months = parseInt(prompt('enter the number'));
+        var days = months*30;
+        document.write(days);
+        document.write('<br>');
+        
+
+        //27. no:of yeras for given hrs
+
+        var hrs = parseInt(prompt('enter the number'));
+        var years = hrs/8760;
+        document.write(years);
+        document.write('<br>');
+
+        
+
+        //28. meter to inches
+
+        var meters = parseInt(prompt('enter the number'));
+        var inches = meters*39.3700787;
+        document.write(inches);
+        document.write('<br>');
+       
+
+        //29. 
+        var cm = parseInt(prompt('enter the cm'));
+        var acres = cm/40469000;
+        document.write(acres);
+        document.write('<br>');
+         
+
+
+         
+          
+
+
+         
+
+         //30.polygon with sides
+
+         var sides = parseInt(prompt('enter no:of sides'));
+         if(sides==3)
+         {
+            document.write('triangle')
+         }
+         else if(sides==4){
+            document.write('square')
+         }
+         else if(sides==5) {
+            document.write('pentagon')
+         }
+         else{
+            document.write('polygon')
+         }
+         document.write('<br>')
+         
+    
+         //31. triangle or not
+         var a1 = parseInt(prompt('enter '));
+         var a2 = parseInt(prompt('enter '));
+         var a3 = parseInt(prompt('enter '));
+         if(a1+a2+a3 == 180)
+         {
+            document.write('triangle')
+         }
+         else{
+            document.write('nota trianle')
+         }
+         document.write('<br>');
+
+         //32.
+         var a1 = parseInt(prompt('enter '));
+         var a2 = parseInt(prompt('enter '));
+         var a3 = parseInt(prompt('enter '));
+         var a4 = parseInt(prompt('enter '));
+         var a5 = parseInt(prompt('enter '));
+         if(a1+a2+a3+a4+a5 == 540)
+         {
+            document.write('pentagon')
+         }
+         else{
+            document.write('not a pentagon')
+         }
+         document.write('<br>');
+         
+
+         //33. start and end values from user
+         var start = parseInt(prompt('enter '));
+         var end = parseInt(prompt('enter '));
+         for(i=start ; i< end ; i++)
+         {
+            document.write(i);
+         }
+         document.write('<br>');
+
+         //34. even numbers
+         var start = parseInt(prompt('enter '));
+         var end = parseInt(prompt('enter '));
+         for(i=start ; i< end ; i++)
+         {
+            if(i%2==0){
+                document.write(i)
+            }
+         }
+         document.write('<br>');
+
+         //35. start and end values from user
+        
+         var start = parseInt(prompt('enter '));
+         var end = parseInt(prompt('enter '));
+         for(i=start ; i< end ; i++)
+         {
+            document.write(i);
+         }
+         document.write('<br>');
+         
+
+         // 36. divisible by both 3 and 6
+
+         var start = parseInt(prompt('enter '));
+         var end = parseInt(prompt('enter '));
+         for(i=start ; i< end ; i++)
+
+         {
+            if(i%3== 0 && i%6 == 0){
+                document.write(i)
+                document.write('<br>');
+            }
+         }
+         document.write('<br>');
+         
+
+         //37.not div by 2, 4, 6
+         var start = parseInt(prompt('enter '));
+         var end = parseInt(prompt('enter '));
+         for(i=start ; i< end ; i++)
+
+         {
+            if(i%2!= 0 && i%4!= 0 && i%6!=0){
+                document.write(i)
+                document.write('<br>');
+            }
+         }
+         document.write('<br>');
+
+        
+         //38.
+
+         var start = parseInt(prompt('enter '));
+         var end = parseInt(prompt('enter '));
+         for(i=start ; i< end ; i++)
+
+         {
+            if(i%5== 0 && i>200){
+                document.write(i)
+                document.write('<br>');
+            }
+         }
+         document.write('<br>');
+
+         
+          
+
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+        
+
+        
+
+
+
+        
+        
+
+
+
+
+        
+        
+
+
+
+        
+
+
+
+    
+       
+
+
+
+
+
+
+        
+
+
+    </script>
+    
+</body>
+</html>

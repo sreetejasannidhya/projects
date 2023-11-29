@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Click Here !!!</h1>
+
+    <script>
+
+       var btn = document.querySelector('h1')
+       console.log(btn)
+
+       btn.addEventListener('click' , display)
+
+       //value = ' click '
+
+       btn.innerText = value
+
+       function display () {
+
+        var z = [['An apple an a day keeps nobody away :(' ] , ['Aim to the sky but not to the sky :)'] , ["There's a long life ahead -slowdown for a while"] , ['Eyes to sky , feet to the ground'],
+
+            [' Behave yourself everytime u speak' ] , ['everything u watch are not sand dunes'] , ['Be consicous with the words u throw out'] , ['The best thing about the future is that it comes one day at a time.']
+            ,['An alcoholic is someone you donot like who drinks as much as you do.']  , ['Education is learning what you didn’t even know you didn’t know.']]
+
+            for( i=0;i<z.length ;i++){
+
+                value = Math.floor(Math.random()*z.length)
+
+                //console.log(ran)
+
+                //document.body.style.text = z[a]
+
+                btn.innerText = z[value]
+
+
+
+
+            }
+
+           // document.write(z[value])
+                
+
+
+
+       }
+           
+
+
+        
+
+        
+    </script>
+    
+</body>
+</html>
