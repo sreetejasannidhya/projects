@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>layouts8</title>
+
+    <style>
+
+        body{
+            margin:0;
+        }
+
+        section{
+
+            display: flex;
+            flex-direction: row;
+            flex-wrap:wrap;
+            height: 100vh;
+
+            margin: 40px;
+
+
+        }
+
+        .div1{
+            width:500px;
+            height: 100vh;
+
+        /*background-image: url('https://64.media.tumblr.com/0a6999fc46a95026b7f530a41e523423/b09c890abfa3f424-75/s640x960/b8c851d1468dad44152b9c9f1688a2cb4a0e39e6.jpg'); */
+        background: linear-gradient(rgba(78, 78, 82, 0.5) ,rgba(128, 128, 132 , 0.5)) , url('https://64.media.tumblr.com/0a6999fc46a95026b7f530a41e523423/b09c890abfa3f424-75/s640x960/b8c851d1468dad44152b9c9f1688a2cb4a0e39e6.jpg');
+        
+
+        }
+
+        .div2{
+
+            padding:50px;
+
+            
+
+
+        }
+
+        .div3{
+
+            padding:50px;
+            
+
+            
+
+
+        }
+    </style>
+</head>
+<body>
+
+    <section>
+        <div class="div1">
+            <h1 style="color:white;text-align:center;padding-top:250px;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size:50px;">REGISTER NOW</h1>
+            <p style="color:white;text-align:center; font-size:30px;">while seats are available !</p>
+        </div>
+
+        <div class="div2">
+            <label for="" required><b> FIRST NAME</b> <span style="color: red;">*</span></label> <br>
+            <input style="width:300px;height:30px;border:1px solid rgb(79, 191, 117); border-radius:2px;" type="text" placeholder="John"> <br> <br> 
+
+            <label for="" required> <b> LAST NAME </b> <span style="color: red;">*</span></label> <br>
+            <input style="width:300px;height:30px;border:1px solid red; border-radius:2px;" type="text" placeholder=""> <br> <br> 
+            
+            <label for="" required> <b>COMPANY</b> <span style="color: red;">*</span></label> <br>
+            <input style="width:300px;height:30px;border:1px solid rgb(223, 221, 221); border-radius:2px;" type="text" placeholder=""> <br> <br>  
+            
+            <label for="" required> <b>EMAIL</b> <span style="color: red;">*</span></label> <br>
+            <input style="width:300px;height:30px;border:1px solid rgb(223, 221, 221); border-radius:2px;" type="text" placeholder=""> <br> <br> 
+            
+            <label for="" required> <b>PHONE NUMBER</b> <span style="color: red;">*</span></label> <br>
+            <input style="width:300px;height:30px;border:1px solid rgb(223, 221, 221); border-radius:2px;" type="text" placeholder=""> <br> <br> <br> <br> 
+             
+            <label for=""><b>~ DONATE US</b></label> <br> <br>
+            <input style="color:rgb(125, 211, 125) ; width:350px; accent-color:rgb(39, 200, 77);"  type="range">
+
+
+
+        </div>
+
+        <div class="div3">
+
+            <label for=""><b>MEAL PREFERENCE</b></label> <br>
+            <select style="width:300px;height:35px;border:1px solid rgb(223, 221, 221); border-radius:2px;" name="" id="">
+
+                <option value=""> Vegetarian</option>
+            </select> <br> <br>
+           <label for=""><b>PAYMENT MODE</b></label> <br>
+           <input type="radio"> Cash &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           <input type="radio"> Cheque &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           <input type="radio"> Demand Draf &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br> <br> <br>
+
+           <label for=""><b>DD/CHEQUE NO.</b></label><br>
+           <input style="width:300px;height:30px;border:1px solid rgb(223, 221, 221); border-radius:2px;" type="text" placeholder=""> <br> <br> 
+           
+           <label for=""><b>DRAWN ON(BANK NAME)</b></label><br>
+           <input style="width:300px;height:30px;border:1px solid rgb(223, 221, 221); border-radius:2px;" type="text" placeholder=""> <br> <br> 
+             
+           <label for=""><b>PAYABLE AT</b></label><br>
+           <input style="width:300px;height:30px;border:1px solid rgb(223, 221, 221); border-radius:2px;" type="text" placeholder=""> <br> <br> <br> <br>
+
+
+           <button style="color:white;background-color:rgb(34, 156, 34); margin-top:150px;width:120px;height:30px;border:none;border-radius:2px;">SUBMIT</button>&nbsp;&nbsp;
+           <button style="color:rgb(200, 199, 199);background-color:white;width:120px;height:30px;border:1px solid rgb(177, 176, 176);border-radius:2px;">RESET</button>
+
+
+
+
+
+             
+        </div>
+    </section>
+    
+</body>
+</html>
